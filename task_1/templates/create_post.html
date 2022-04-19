@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body>
+    
+    <p>
+        Here you can create a new guest post!
+    </p>
+    <p>
+        {{ message }}
+    </p>
+    <form action="/posts/create" method="post">
+        <input type="text" name="name" placeholder="John Smith" />
+        <input type="email" name="email" placeholder="John@Smith.com" />
+        <button type="submit">Create</button>
+    </form>
+    <form action="/posts/create" method="post">
+        <input type="text" name="post" placeholder="post text" />
+
+    </form>
+
+<!--    {{ time }}<br>-->
+<!--    {{ request.method }}<br>-->
+<!--    {{ request.headers }}-->
+
+{% endblock content %}
