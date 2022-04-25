@@ -6,7 +6,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 np.random.seed(42)
-class SampleBuilder:
+class SampleFacade:
     """
     1. Copy train dataset
     2. Shuffle data (don't miss the connection between X_train and y_train)
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     """
     X, y = load_iris(return_X_y=True)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-    pattern_item = SampleBuilder(X_train, y_train)
+    pattern_item = SampleFacade(X_train, y_train)
     clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))
     for df_share in np.arange(0.1, 1, 0.1):
         """
